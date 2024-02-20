@@ -19,6 +19,7 @@ html {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
+    overflow: hidden;
 }
 
 .header {
@@ -34,6 +35,7 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow: visible;
 }
 
 .header__logo {
@@ -152,11 +154,14 @@ html {
     transition: 0.3s;
 }
 
+.banner__content__right {
+    width: 100%;
+}
+
 .banner__content__right form {
     display: flex;
     flex-direction: column;
-    align-content: space-between;
-    width: 470px;
+    width: 100%;
     border-radius: 10px;
     background: rgb(255, 255, 255);
 }
@@ -241,26 +246,7 @@ html {
 .social__logos {
     display: flex;
     align-items: center;
-    gap: 45px;
-}
-
-.social__logos__rss a {
-    position: relative;
-}
-
-.social__logos__rss a svg:first-child {
-    position: absolute;
-    bottom: 2px;
-    left: -2px;
-}
-
-.social__logos__rss a svg {
-    fill: #CCCCCC;
-    transition: .3s;
-}
-
-.social__logos__rss a:hover svg {
-    fill: rgb(236, 121, 121);
+    gap: 30px;
 }
 
 .social__logo a svg {
@@ -314,7 +300,7 @@ html {
 }
 
 .tab__content__left {
-    padding: 55px 30px 50px 100px;
+    padding: 41px 30px 54px 100px;
 }
 
 .tab__title {
@@ -324,34 +310,43 @@ html {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-bottom: 57px;
+    margin-bottom: 68px;
 }
 
-.tab__text {
+.tab__text__paragraph {
     color: #000;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-bottom: 26px;
+    text-align: left;
+}
+
+.tab__text__paragraph:nth-child(4) {
+    margin-top: 26px;
+}
+
+.tab__text__paragraph:last-child {
+    margin-bottom: 27px;
 }
 
 .tab__btn {
     display: block;
     width: 270px;
     padding: 15px 0;
-    margin-top: 84px;
-    margin-bottom: 0;
     background-color: #EC7979;
-    color: #fff;
     text-align: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.tab__btn a {
+    color: #fff;
     font-family: "Open Sans";
     font-size: 18px;
     font-style: normal;
     line-height: normal;
     text-transform: capitalize;
-    cursor: pointer;
-    transition: .3s;
 }
 
 .tab__btn:hover {
@@ -700,14 +695,10 @@ html {
 }
 
 .contact__form-container__right textarea {
-    color: rgb(189, 189, 189);
-    font-family: Open Sans;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 19px;
     height: 100%;
     width: 100%;
     border-bottom: 1px solid rgb(189, 189, 189);
+    resize: none;
 }
 
 .contact__form-container__btn {
@@ -717,7 +708,7 @@ html {
     padding-top: 20px;
 }
 
-.contact__form-container__btn input {
+.contact__form-container__btn button {
     width: 370px;
     padding: 16px 0;
     background: rgb(236, 121, 121);
@@ -728,9 +719,10 @@ html {
     line-height: 25px;
     text-transform: capitalize;
     transition: .3s;
+    cursor: pointer;
 }
 
-.contact__form-container__btn input:hover {
+.contact__form-container__btn button:hover {
     background: rgb(171, 73, 73);
 }
 
@@ -748,4 +740,77 @@ html {
     font-weight: 400;
     line-height: 21px;
     margin-top: 35px;
+}
+
+@media (max-width:1250px) {
+    .header__logo {
+        position: static;
+    }
+
+    .banner {
+        padding: 230px 0 131px 115px;
+    }
+
+    .banner__content__left__logo svg {
+        width: 115px;
+    }
+
+    .banner__content__left__text h1 {
+        font-size: 36px;
+        line-height: 42px;
+    }
+
+    .banner__content__left__text p {
+        max-width: 183px;
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .banner__content__left__btn {
+        max-width: 183px;
+        padding: 12.5px 0;
+    }
+
+    .banner__content__right form p {
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    .social__text h3 {
+        font-size: 18px;
+        line-height: 25px;
+        padding: 10px 0;
+    }
+
+    .social__text p {
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .social__logos {
+        gap: 20px;
+    }
+
+    .social__logo a svg {
+        width: 64px;
+    }
+
+    .tab__title {
+        font-size: 24px;
+        line-height: 33px;
+    }
+
+    .tab__text {
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .tab__btn {
+        max-width: 232px;
+    }
+
+    .tab__content__right img {
+        width: 398px;
+        height: 385px;
+    }
 }
